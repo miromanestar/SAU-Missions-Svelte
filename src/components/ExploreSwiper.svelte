@@ -2,6 +2,10 @@
     import { Swiper, SwiperSlide } from 'swiper/svelte'
     import { Pagination, Mousewheel, Keyboard } from 'swiper'
     import ShowcaseSwiper from './ShowcaseSwiper.svelte';
+
+    const slideNames = [
+        'Opportunities', 'Explore', 'Current SMs'
+    ]
 </script>
 
 <main>
@@ -20,7 +24,7 @@
             bulletClass: 'explore-nav',
             bulletActiveClass: 'explore-nav-active',
             renderBullet: (index, className) => {
-                return `<a class="${ className }">${ index }</a>`
+                return `<a class="${ className }">${ slideNames[index] }</a>`
             }
         }}
     >
@@ -30,6 +34,10 @@
 
         <SwiperSlide>
             Test35r325235
+        </SwiperSlide>
+
+        <SwiperSlide>
+            AnotherTest
         </SwiperSlide>
     </Swiper>
 </main>

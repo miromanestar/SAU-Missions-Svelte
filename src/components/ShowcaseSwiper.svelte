@@ -1,6 +1,6 @@
 <script>
     import { Swiper, SwiperSlide } from 'swiper/svelte'
-    import { Mousewheel, Keyboard, Virtual, Lazy } from 'swiper'
+    import { Mousewheel, Keyboard, Virtual, Lazy, Autoplay } from 'swiper'
     import ShowcaseSlide from './ShowcaseSlide.svelte';
 
     const slides = [
@@ -27,7 +27,8 @@
 
 <main>
     <Swiper
-        modules={[Mousewheel, Keyboard, Virtual, Lazy]}
+        modules={[Mousewheel, Keyboard, Virtual, Lazy, Autoplay]}
+        direction="horizontal"
         lazy={{
             loadPrevNext: true,
             loadPrevNextAmount: 2
@@ -35,7 +36,7 @@
         spaceBetween={100}
         centeredSlides={true}
         autoplay={{
-            delay: 6000,
+            delay: 500,
             disableOnInteraction: false
         }},
         keyboard={{enabled: true}}
@@ -55,6 +56,7 @@
 <style lang="scss">
     main {
         height: 100vh;
+        width: 100vw;
         grid-column: 2/-1;
         grid-row: 1/-1;
         position: relative;

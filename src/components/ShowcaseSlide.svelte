@@ -3,7 +3,7 @@
 </script>
 
 <main>
-    <div>
+    <div class="content">
         <h2 class="title">{slide.title}<br /><span>{slide.subtitle}</span></h2>
         <div class="info">
             <div class="summary">
@@ -36,6 +36,12 @@
         position: relative;
         padding: 6vh 12vh;
         background-color: white;
+    }
+
+    .content {
+        width: 50vw;
+        color: var(--white);
+        font-family: 'helveticaneue_roman';
     }
 
     .title {
