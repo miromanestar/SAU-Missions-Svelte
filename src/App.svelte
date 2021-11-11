@@ -11,9 +11,9 @@
 <style>
 	main {
 		display: grid;
-		grid-template-columns: 12%;
+		position: fixed;
 		width: 100%;
 		height: 100%;
-		position: fixed;
+		grid-template-columns: 12%;
 	}
 </style>

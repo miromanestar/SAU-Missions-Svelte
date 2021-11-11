@@ -1,5 +1,37 @@
+<script>
+    import { Swiper, SwiperSlide } from 'swiper/svelte'
+    import { Pagination, Mousewheel, Keyboard } from 'swiper'
+    import ShowcaseSwiper from './ShowcaseSwiper.svelte';
+</script>
+
 <main>
-    <div>TEST</div>
+    <Swiper
+        modules={[Pagination, Mousewheel, Keyboard]}
+        direction="vertical"
+        spaceBetween={1}
+        mousewheel={{
+            forceToAxis: true,
+            thresholdDelta: 200
+        }}
+        keyboard={{enabled: true}}
+        pagination={{
+            el: '#sidebar-explore',
+            clickable: true,
+            bulletClass: 'explore-nav',
+            bulletActiveClass: 'explore-nav-active',
+            renderBullet: (index, className) => {
+                return `<a class="${ className }">${ index }</a>`
+            }
+        }}
+    >
+        <SwiperSlide>
+            <ShowcaseSwiper />
+        </SwiperSlide>
+
+        <SwiperSlide>
+            Test35r325235
+        </SwiperSlide>
+    </Swiper>
 </main>
 
 <style>

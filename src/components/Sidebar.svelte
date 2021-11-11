@@ -36,13 +36,10 @@
         </p>
     </div>
 
-    <div class="explore">
-        <h2>EXPLORE</h2>
-        <div>
-            <a href="opportunites.html">Opportunities</a>
-            <a href="current.html">Current SMs</a>
-            <a href="contact.html">Contact an SM</a>
-        </div>
+    <div class="explore" id="sidebar-explore">
+        <a class="explore-nav" href="#">Opportunities</a>
+        <a class="explore-nav" href="#">Explore</a>
+        <a class="explore-nav" href="#">Current SMs</a>
     </div>
 
     <div class="interest">
@@ -70,14 +67,20 @@
         justify-content: space-between;
         background-color: white;
         z-index: 5;
+        line-height: 1.2;
+        font-size: 1rem;
+        font-weight: 400;
     }
 
     .logo {
         display: flex;
-        width: 100%;
         justify-content: center;
         align-items: center;
         padding: 1rem;
+
+        img {
+            width: 100%;
+        }
     }
 
     .title {
@@ -115,7 +118,6 @@
     .tagline {
         display: flex;
         justify-content: center;
-        width: 100%;
         background: var(--blue);
         color: var(--white);
         margin: 0;
@@ -212,7 +214,6 @@
     }
 
     .explore {
-        width: 100%;
         border-top: 1px solid var(--lGrey);
         padding: 1rem;
 
@@ -222,31 +223,48 @@
             font-size: 1rem;
             text-align: center;
         }
+    }
 
-        a {
-            text-decoration: none;
-            text-align: right;
-            color: var(--dGrey);
-            background: rgb(240,240,240);
-            font-size: 1.7vh;
-            display: block;
-            width: 100%;
-            padding: .5rem 1.5rem .5rem 0;
-            position: relative;
-            margin-top: 5px;
+    :global(.explore-nav) {
+        transition: .2s;
+        text-decoration: none;
+        text-align: right;
+        color: var(--dGrey);
+        background: rgb(240,240,240);
+        font-size: 1.7vh;
+        display: block;
+        padding: .5rem 1.5rem .5rem 0;
+        position: relative;
+        margin-top: 5px;
+        cursor: pointer;
 
-            &::after {
-                content: url(../icons/arrow.svg);
-                width: 8px;
-                height: 1.2vh;
-                position: absolute;
-                right: .5rem;
-            }
+        &::after {
+            content: url(../icons/arrow.svg);
+            width: 8px;
+            height: 1.2vh;
+            position: absolute;
+            right: .5rem;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            filter: brightness(90%);
+        }
+    }
+
+    :global(.explore-nav-active) {
+        background-color: var(--creamsicle);
+        color: white;
+
+        &::after {
+            filter: brightness(200);
         }
     }
 
     .interest {
-        width: 100%;
         background: var(--lime);
         text-align: center;
         padding: 1rem;
